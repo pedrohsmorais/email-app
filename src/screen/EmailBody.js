@@ -5,6 +5,7 @@ import { View,
    StyleSheet, 
    Image
 } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export default function EmailBody( { route } ) {
 
@@ -14,7 +15,6 @@ export default function EmailBody( { route } ) {
       async function getData() {
           const response = await fetch(`https://mobile.ect.ufrn.br:3002/emails/${route.params.id}`);
           const emailId = await response.json();
-          console.log(emailId);
           setEmailId(emailId);
       }
       getData();
@@ -31,19 +31,23 @@ export default function EmailBody( { route } ) {
       }
     </View>
     <View style={styles.infoContainer}>
-      <Image style={styles.picture} source={{uri: emailId.picture}}/>
       <View style={styles.remetente}>
-        <Text style={ {fontSize: 20} }>
-          From: {emailId.from}
-        </Text>
-        <Text>
-          To: {emailId.to}
-        </Text> 
+      <Image style={styles.picture} source={{uri: emailId.picture}}/>
+        <View style={styles.remetenteinfo}>
+          <Text style={ {fontSize: 20} }>
+            From: {emailId.from}
+          </Text>
+          <Text>
+            To: {emailId.to}
+          </Text> 
+        </View> 
       </View>
       <Text>
         {emailId.time}
       </Text>
     </View>
+    <WebView style={styles.webView}
+    source={{ html:`${emailId.body}`}}/>
    </View>
   );
 }
@@ -66,18 +70,23 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   infoContainer:{
-    height: 40,
+    height: 70,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: 10,
   },
   remetente:{
+    flexDirection: 'row',
+  },
+  remetenteinfo:{
+   justifyContent: 'center',
   },
   picture: {
     marginHorizontal: 10,
-    width: 70,
-    height: 70,
-    borderRadius: 70/2,
+    width: 60,
+    height: 60,
+    borderRadius: 60/2,
   },
+  webView:{
+  }
 });

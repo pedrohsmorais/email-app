@@ -4,7 +4,7 @@ import { StyleSheet, View} from 'react-native';
 
 import EmailBox from '../components/EmailBox';
 
-const statusBarHeigth= StatusBar.currentHeigth ? StatusBar.currentHeigth : 40;
+const statusBarHeigth = StatusBar.currentHeigth ? StatusBar.currentHeigth : 40;
 
 export default function HomeScreen({ navigation }) {
     
