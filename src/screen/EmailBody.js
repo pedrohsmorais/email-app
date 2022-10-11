@@ -46,8 +46,10 @@ export default function EmailBody( { route } ) {
         {emailId.time}
       </Text>
     </View>
-    <WebView style={styles.webView}
-    source={{ html:`${emailId.body}`}}/>
+    <View style={styles.webView}>
+      <WebView
+      source={{ html: `<div style=\"font-size: 50; margin: 50px 15px 0 15px \">${emailId.body}<div>`}}/>
+    </View>
    </View>
   );
 }
@@ -88,5 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 60/2,
   },
   webView:{
+    flex: 1,
+    width: "100%",
   }
 });
