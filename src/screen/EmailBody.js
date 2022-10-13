@@ -57,7 +57,6 @@ export default function EmailBody( { route } ) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    background: 'red'
   },
   titleContainer:{
     justifyContent: 'space-between',

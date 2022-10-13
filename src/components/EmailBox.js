@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 
-import EmailBody from '../screen/EmailBody';
-
 export default function EmailBox({ navigation }) {
 
   const [email, setEmail] = useState([]);
