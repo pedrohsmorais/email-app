@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   tittlebox:{
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginEnd: 10,
+    marginEnd: 15,
     marginStart: 6,
   },
   picture: {
