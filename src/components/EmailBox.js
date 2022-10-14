@@ -30,22 +30,22 @@ export default function EmailBox({ navigation }) {
           source={{uri: item.picture}}/>
             <View style={styles.infoBox}>
               <View style={styles.tittlebox}>
-                <Text style={styles.tittle}>{item.to}</Text>
+                <Text style={styles.tittle}>{item.from}</Text>
                 <Text>{item.time}</Text>
               </View>
               <View>
                 <Text style={styles.tittleContainer}>{item.tittle}</Text>
               </View>
               <View style={styles.resumeBox}>
-              <Text style={styles.summaryContainer}>{item.summary}</Text>
-              {
-                item.star ? (
-                    <FontAwesome name='star' color='#f3c84d' size={24}/>
-                ) : (
-                    <FontAwesome name='star-o' color='black' size={24}/>
-                      
-                )
-              }
+                <Text style={styles.summaryContainer}>{item.summary}</Text>
+                {
+                  item.star ? (
+                      <FontAwesome name='star' color='#f3c84d' size={24}/>
+                  ) : (
+                      <FontAwesome name='star-o' color='black' size={24}/>
+                        
+                  )
+                }
               </View>
           </View>
         </TouchableOpacity> 
