@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   resumeBox:{
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginEnd: 10,
+    marginEnd: 15,
     marginStart: 5,
     alignItems: 'center',
   },
