@@ -42,7 +42,7 @@ export default function EmailBody( { route } ) {
           </Text> 
         </View> 
       </View>
-      <Text>
+      <Text style={styles.time}>
         {emailId.time}
       </Text>
     </View>
@@ -87,6 +87,9 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 60/2,
+  },
+  time:{
+    marginRight: 5,
   },
   webView:{
     flex: 1,
